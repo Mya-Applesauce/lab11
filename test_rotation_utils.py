@@ -33,5 +33,5 @@ def test_rotation_utils6():
     assert adjusted_rotation == 260
 
 def test_rotation_utils7():
-    adjusted_rotation = adjust_rotation("string")
-    assert adjusted_rotation == TypeError
+    with pytest.raises(TypeError, match='Input must be a numeric value.') as excinfo:
+        adjust_rotation("ur mom")
